@@ -1,7 +1,7 @@
 $(document).ready(function () {
-	createSlider("#rotate-slider-a", "#rotate-a");
-	createSlider("#rotate-slider-b", "#rotate-b");
-	createSlider("#rotate-slider-c", "#rotate-c");
+	createSlider("#rotate-slider-1", "#rotate-a");
+	createSlider("#rotate-slider-2", "#rotate-b");
+	createSlider("#rotate-slider-3", "#rotate-c");
 });
 
 function createSlider(name, label) {
