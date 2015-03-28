@@ -9,8 +9,8 @@
 		<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="js/svg.js"></script>
-		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/controls.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
 		<link rel="stylesheet" href="css/fa/css/font-awesome.min.css">
 		<link rel="stylesheet" href="css/jquery/jquery-ui.css">
 		<link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Lato|Montserrat|Play'>
@@ -49,7 +49,7 @@
 									<select name="shapes" id="select-shape-1">
 										<option value="0">None</option>
 										<optgroup label="Basic shapes">
-											<option value="1">Circle</option>
+											<option value="1" selected="selected">Circle</option>
 											<option value="2">Oval</option>
 											<option value="3">Square</option>
 											<option value="4">Triangle</option>
@@ -87,7 +87,7 @@
 										<optgroup label="Custom shapes">
 											<option value="9" >Flower</option>
 											<option value="10">Starfish</option>
-											<option value="11">Star</option>
+											<option value="11" selected="selected">Star</option>
 											<option value="12">Plus</option>
 											<option value="13">Cross</option>
 											<option value="14">Arrows</option>
@@ -103,7 +103,7 @@
 										<optgroup label="Basic shapes">
 											<option value="1">Circle</option>
 											<option value="2">Oval</option>
-											<option value="3">Square</option>
+											<option value="3" selected="selected">Square</option>
 											<option value="4">Triangle</option>
 											<option value="5">Rectangle</option>
 											<option value="6">Pentagon</option>
@@ -177,7 +177,6 @@
 						<section id="raphaelviz">
 							<!-- Raphael generates the viz here. -->
 						</section>
-						<!-- <object class="svg-object svg-final" type="image/svg+xml" data="moving_circle.svg"></object> -->
 					</section>
 					<button id="btnDownloadSvg" type="button"><i class="fa fa-circle"></i> Download SVG</button>
 					<section>
