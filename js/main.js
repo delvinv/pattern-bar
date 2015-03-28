@@ -2,23 +2,24 @@ var draw;							// Initialise the Svg.js canvas
 var cwidth = 500, cheight = 500;	// Width and Height of Raphael canvas
 
 $(document).ready(function () {
-	
     // Check for and set the svg.js canvas    
     if (SVG.supported) {
         draw = SVG('raphaelviz').size(cwidth, cheight);
-    //     var rect = draw.rect(cwidth, cheight).attr({ fill: '#f06' });
     } else {
         alert('SVG not supported');
     }
     
-    drawShape(12, 0);
-    drawShape(3, 2);
+    //Load controls
+    createSlider("#rotate-slider-1", "#rotate-a");
+	createSlider("#rotate-slider-2", "#rotate-b");
+	createSlider("#rotate-slider-3", "#rotate-c");
+    
     renderCanvas();
     
-    // When Draw button is clicked
-    $('#btnDraw').click(function(e){
+    $('.update-shapes').on('change', function() {
+        console.log('Yo'+$(this).val());
         renderCanvas();
-    });
+    }); 
     
     // When Download button is clicked
     $('#btnDownloadSvg').click(function(e){
@@ -149,4 +150,18 @@ function drawShape(shapeNumber, positionNumber){
             var heart = draw.circle(maxSize);
             break;
     }
+}
+
+function createSlider(name, label) {
+	$( name ).slider({
+      // orientation: "vertical",
+      range: "min",
+      min: 0,
+      max: 360,
+      value: 0,
+      slide: function( event, ui ) {
+      	$( label ).text( $( name ).slider( "value" ) );
+        renderCanvas();
+      }
+    });
 }
