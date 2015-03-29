@@ -48,9 +48,9 @@ function renderCanvas(){
     var xRepeat = $('#x-repeat').val();
     var yRepeat = $('#y-repeat').val();
 
-    drawShape(shapeChoice1, 0);
-    drawShape(shapeChoice2, 1);
-    drawShape(shapeChoice3, 2);
+    drawShape(shapeChoice1, 0, shapeRotate1);
+    drawShape(shapeChoice2, 1, shapeRotate2);
+    drawShape(shapeChoice3, 2, shapeRotate3);
 
     // Draw required number of objects, allowing for size    
 }
@@ -64,7 +64,7 @@ function selectTextarea() {
 }
 
 // Shape drawing function
-function drawShape(shapeNumber, positionNumber){
+function drawShape(shapeNumber, positionNumber, rotationDegrees){
     
     var maxSize = 100;
     var padding = 0;
@@ -85,34 +85,34 @@ function drawShape(shapeNumber, positionNumber){
     
     switch(parseInt(shapeNumber)) {
         case 0: // Circle
-            var circle = draw.circle(0.5).fill('#fff').stroke({ width: 2 }).move(padding,padding);
+            var circle = draw.circle(0.5).fill('#fff').stroke({ width: 2 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 1: // Circle
-            var circle = draw.circle(maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            var circle = draw.circle(maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 2: // Oval
-            var oval = draw.ellipse(maxSize,maxSize*0.5).fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            var oval = draw.ellipse(maxSize,maxSize*0.5).fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 3: // Square
-            var square = draw.rect(maxSize,maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            var square = draw.rect(maxSize,maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 4: // Triangle
-            var triangle = draw.polygon([[0,maxSize], [maxSize,maxSize], [maxSize*0.5,0]]).fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            var triangle = draw.polygon([[0,maxSize], [maxSize,maxSize], [maxSize*0.5,0]]).fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 5: // Rectangle
-            var rectangle = draw.rect(maxSize,0.8*maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            var rectangle = draw.rect(maxSize,0.8*maxSize).fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 6: // Pentagon
             var pentagon = draw.polygon([[0,0.5*maxSize], [0.5*maxSize,0], 
                                          [maxSize,0.5*maxSize], [0.75*maxSize,maxSize], 
                                          [0.25*maxSize,maxSize]]).fill('#fff')
-            .stroke({ width: 1 }).move(padding,padding);
+            .stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 7: // Hexagon
             var hexagon = draw.polygon([[0,0.5*maxSize], [0.25*maxSize,0], 
                                         [0.75*maxSize,0], [maxSize,0.5*maxSize], 
                                         [0.75*maxSize,maxSize], [0.25*maxSize,maxSize]])
-            .fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            .fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 8: // Diamonds
             var diamond = draw.circle(maxSize);
@@ -128,14 +128,14 @@ function drawShape(shapeNumber, positionNumber){
                                      [maxSize,0], [0.75*maxSize,0.5*maxSize], 
                                      [maxSize,maxSize], [0.5*maxSize,0.75*maxSize], 
                                      [0,maxSize], [0.25*maxSize,0.5*maxSize]])
-            .fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            .fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 12: // Plus
             var plus = draw.polygon([[0.4*maxSize,0], [0.6*maxSize,0], [0.6*maxSize,0.4*maxSize], 
                                      [maxSize,0.4*maxSize], [maxSize,0.6*maxSize], [0.6*maxSize,0.6*maxSize], 
                                      [0.6*maxSize,maxSize], [0.4*maxSize,maxSize], [0.4*maxSize,0.6*maxSize], 
                                      [0,0.6*maxSize], [0,0.4*maxSize], [0.4*maxSize,0.4*maxSize]])
-            .fill('#fff').stroke({ width: 1 }).move(padding,padding);
+            .fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
             break;
         case 13: // Cross
             var cross = draw.circle(maxSize);
