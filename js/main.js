@@ -1,4 +1,4 @@
-/*jshint globals: false, curly: true, noarg: true, undef: true, unused: true, latedef: true, eqnull: true, expr: true, node: true, jquery: true*/
+/*jshint devel:true, browser:true, globals: false, curly: true, noarg: true, undef: true, unused: true, latedef: true, eqnull: true, expr: true, node: true, jquery: true*/
 
 var draw;							// Initialise the Svg.js canvas
 var cwidth = 500, cheight = 500;	// Width and Height of Raphael canvas
@@ -119,30 +119,19 @@ function renderCanvas(){
     var shapeFinal3 = drawShape(shapeChoice3, 2, shapeRotate3);
 
     var shapeGroup = draw.group();
-    if((xRepeat == 1) && (yRepeat == 1)){
-        shapeGroup.add(shapeFinal1);
-        shapeGroup.add(shapeFinal2);
-        shapeGroup.add(shapeFinal3);
-    } else {
-        shapeFinal1.scale(xScale, yScale);
-        shapeFinal2.scale(xScale, yScale);
-        shapeFinal3.scale(xScale, yScale);
+    shapeGroup.add(shapeFinal1);
+    shapeGroup.add(shapeFinal2);
+    shapeGroup.add(shapeFinal3);
 
-        shapeGroup.add(shapeFinal1);
-        shapeGroup.add(shapeFinal2);
-        shapeGroup.add(shapeFinal3);
+    if (!((xRepeat == 1) && (yRepeat == 1))){
+        shapeGroup.scale(xScale, yScale);
+
         for(var i=0; i<xRepeat; i++){
             for(var j=0; j<yRepeat; j++){
                 draw.use(shapeGroup).move(i*cwidth/xRepeat, j*cheight/yRepeat);
-//                console.log('Shape ('+i+','+j+'): '+shapeW+', '+shapeH);
             }
         }
     }
-
-
-//    var use  = draw.use(shapeGroup).move(200, 200);
-
-    // Draw required number of objects, allowing for size
 }
 
 function createSlider(name, label) {
@@ -152,7 +141,7 @@ function createSlider(name, label) {
       min: 0,
       max: 360,
       value: 0,
-      slide: function( event, ui ) {
+      slide: function() {
       	$( label ).text( $( name ).slider( "value" ) );
         renderCanvas();
       }
@@ -161,7 +150,7 @@ function createSlider(name, label) {
 
 // Select the contents of the text area when clicked
 function selectTextarea() {
-	$('.exporter').on('click focus','#exportcode',function(e) {
+	$('.exporter').on('click focus','#exportcode',function() {
 		this.focus();
 		this.select();
 	});
@@ -187,7 +176,7 @@ $(document).ready(function () {
     });
 
     // When Download button is clicked
-    $('#btnDownloadSvg').click(function(e){
+    $('#btnDownloadSvg').click(function(){
         console.log('Download');
     });
 
