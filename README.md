@@ -3,7 +3,7 @@ A pattern editor to generate SVG patterns that can be exported as JPGs or downlo
 
 **Currently being built**
 
-![Screenshot on 30/03/2015](https://github.com/delvinv/pattern-bar/tree/master/img/screen.png)
+![Screenshot on 30/03/2015](img/screen.png)
 
 ## Functions
 
