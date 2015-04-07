@@ -124,13 +124,13 @@ nav > ul > li > a:hover {
 	}
 
 	.subsection-title {
-		font-family: "Play";
+		font-family: "Play", "Helvetica", "Verdana";
 		font-size: 125%;
 		color: #cc66ff;
 	}
     .subsection-helper-text {
         padding: 1px 0 1px 0;
-        font-family: 'Play';
+        font-family: "Play", "Helvetica", "Verdana";
         font-size: 60%;
         font-style: italic;
         color: #ffff66;
@@ -206,7 +206,7 @@ nav > ul > li > a:hover {
 }
 
 .section-header { /* Titles of each section */
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', 'Eurostile', sans-serif;
 	font-size: 150%;
 	color: #ccff99;
 }

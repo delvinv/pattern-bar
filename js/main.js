@@ -170,6 +170,23 @@ function selectTextarea() {
 	});
 }
 
+// Enable downloading the SVG code as a standalone file when the Download button is clicked.
+function downloadSVG(){
+    window.URL = window.webkitURL || window.URL;
+    var contentType = 'image/svg+xml';
+    var svgCode = $('#exportcode').val();
+    var svgFile = new Blob([svgCode], {type: contentType});
+
+    var a = document.createElement('a');
+    a.download = 'my.svg';
+    a.href = window.URL.createObjectURL(svgFile);
+    a.textContent = 'Download SVGG';
+
+    a.dataset.downloadurl = [contentType, a.download, a.href].join(':');
+
+    document.body.appendChild(a);
+}
+
 // Loaded when body of HTML is loaded.
 $(document).ready(function () {
     // Check for and set the svg.js canvas
@@ -193,6 +210,10 @@ $(document).ready(function () {
 
     // When Download button is clicked
     $('#btnDownloadSvg').click(function(){
+//        jQuery('body').prepend(jQuery('<a/>')
+//                       .attr('href','data:text/octet-stream;base64,SGVsbG8gV29ybGQh')
+//                       .text('Click to download'));
+        downloadSVG();
         console.log('Download');
     });
 
