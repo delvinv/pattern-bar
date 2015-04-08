@@ -144,6 +144,9 @@ function renderCanvas(){
     var finalCode = svgText1.concat(svgCode, svgText3);                                                 // Concatenating the strings to produce full standalone SVG code.
 
     $('#exportcode').empty().val(finalCode);                                                            // Adding the standalone code to 'Export' textarea, user can copy this
+
+    // Update the SVG file to be downloaded.
+    downloadSVG();
 }
 
 // Creating the Rotation sliders in the interface for the user to control shape transformation.
@@ -177,16 +180,11 @@ function downloadSVG(){
     var svgCode = $('#exportcode').val();
     var svgFile = new Blob([svgCode], {type: contentType});
 
-    var a = document.createElement('a');
-    a.download = 'my.svg';
-    a.href = window.URL.createObjectURL(svgFile);
-    a.textContent = 'Download SVGG';
-
-    a.dataset.downloadurl = [contentType, a.download, a.href].join(':');
-
-    document.body.appendChild(a);
+    $('#aDownloadSvg').prop('download','pattern-bar.svg');
+    $('#aDownloadSvg').prop('href',window.URL.createObjectURL(svgFile));
+    $('#aDownloadSvg').prop('textContent','Download SVG');
 }
-
+//
 // Loaded when body of HTML is loaded.
 $(document).ready(function () {
     // Check for and set the svg.js canvas
@@ -202,19 +200,10 @@ $(document).ready(function () {
 	createSlider("#rotate-slider-3", "#rotate-c");
 
     renderCanvas();
-
+    downloadSVG();
     // When interface controls are changed, then refresh and draw SVG
     $('.update-shapes').on('change', function() {
         renderCanvas();
-    });
-
-    // When Download button is clicked
-    $('#btnDownloadSvg').click(function(){
-//        jQuery('body').prepend(jQuery('<a/>')
-//                       .attr('href','data:text/octet-stream;base64,SGVsbG8gV29ybGQh')
-//                       .text('Click to download'));
-        downloadSVG();
-        console.log('Download');
     });
 
     // Loading up listener that ensures clicking on text area selects its contents.
