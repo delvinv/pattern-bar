@@ -230,6 +230,7 @@ function loadSVG(){
         return val.replace(/<\/?r1>/g,'');
     });
     if(shapeRotate1){
+
         $("#rotate-slider-1").slider('option','value',shapeRotate1);
         $( "#rotate-a" ).text( shapeRotate1 );
     }
@@ -237,6 +238,7 @@ function loadSVG(){
         return val.replace(/<\/?r2>/g,'');
     });
     if(shapeRotate2){
+
         $("#rotate-slider-2").slider('option','value',shapeRotate2);
         $( "#rotate-b" ).text( shapeRotate2 );
     }
