@@ -114,7 +114,7 @@ nav > ul > li > a:hover {
 }
 
 .controller { /* the controls of the pattern editor are here. */
-	clear: both;
+/*	clear: both;*/
 /*	overflow: auto;*/
 	background-color: #7f007f;
 }
@@ -224,11 +224,6 @@ nav > ul > li > a:hover {
 	color: #00cc66;
 }
 
-.exporter { /* where the svg code to be exported is stored */
-	background-color: #ff00ff;
-	margin-top: 10px;
-}
-
 /* Right content area*/
 .final-pattern {
 	margin-top: 0px;
@@ -238,6 +233,7 @@ nav > ul > li > a:hover {
 	font-family: 'Montserrat', 'Eurostile', sans-serif;
 	font-size: 150%;
 	color: #ccff99;
+    margin-bottom: 2px;
 }
 
 
@@ -258,7 +254,7 @@ footer {
     clear: both;
 }
 
-.controller, .exporter, .final-pattern {
+.controller, .exporter, .importer, .final-pattern {
 	/* Material design*/
 	background-color: #666666;
 	box-shadow: 0 0 7px #aaa;

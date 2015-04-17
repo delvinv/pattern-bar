@@ -191,7 +191,7 @@ function downloadSVG(){
 
 // .SVG file contents are pasted in the text box and read in pattern parameters from it
 function loadSVG(){
-    var svgCode = $('#exportcode').val();
+    var svgCode = $('#importcode').val();
 
     // Set Shape 1 from the code.
     var shapeChoice1 = svgCode.match(/<s1>(\d*?)<\/s1>/g).map(function(val) {
