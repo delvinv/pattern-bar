@@ -141,7 +141,11 @@ function renderCanvas(){
     var svgCode = $('svg').html();                                                                      // Contents of the SVG pattern we created in function so far.
     var svgText3 = '</svg>';                                                                            // Closing tag of SVG syntax.
 
-    var finalCode = svgText1.concat(svgCode, svgText3);                                                 // Concatenating the strings to produce full standalone SVG code.
+    svgText4 = "<!--" + " <s1>"+shapeChoice1+"</s1>" + " <s2>"+shapeChoice2+"</s2>" + " <s3>"+shapeChoice3+"</s3>" + " -->";
+    svgText4 = svgText4 + "<!--" + " <r1>"+shapeRotate1+"</r1>" + " <r2>"+shapeRotate2+"</r2>" + " <r3>"+shapeRotate3+"</r3>" + " -->";
+    svgText4 = svgText4 + "<!--" + " <xR>"+xRepeat+"</xR>" + " <yR>"+yRepeat+"</yR>" + " -->";
+
+    var finalCode = svgText1.concat(svgCode, svgText3, svgText4);                                       // Concatenating the strings to produce full standalone SVG code.
 
     $('#exportcode').empty().val(finalCode);                                                            // Adding the standalone code to 'Export' textarea, user can copy this
 
@@ -184,7 +188,53 @@ function downloadSVG(){
     $('#aDownloadSvg').prop('href',window.URL.createObjectURL(svgFile));
     $('#aDownloadSvg').prop('textContent','Download SVG');
 }
-//
+
+function loadClick(){
+    $('#aLoadSvg').click(function(e) {
+        e.preventDefault();
+        loadSVG();
+        renderCanvas();
+    })
+}
+
+// .SVG file contents are pasted in the text box and read in pattern parameters from it
+function loadSVG(){
+    var svgCode = $('#exportcode').val();
+
+    // Set Shape 1 from the code.
+    var shapeChoice1 = svgCode.match(/<s1>(\d*?)<\/s1>/g).map(function(val) {
+        return val.replace(/<\/?s1>/g,'');
+    });
+    if(shapeChoice1) {
+        $('#select-shape-1').val(shapeChoice1);
+    }
+
+    // Set Shape 2 from the code.
+    var shapeChoice2 = svgCode.match(/<s2>(\d*?)<\/s2>/g).map(function(val) {
+        return val.replace(/<\/?s2>/g,'');
+    });
+    if(shapeChoice2) {
+        $('#select-shape-2').val(shapeChoice2);
+    }
+
+    // Set Shape 3 from the code.
+    var shapeChoice3 = svgCode.match(/<s3>(\d*?)<\/s3>/g).map(function(val) {
+        return val.replace(/<\/?s3>/g,'');
+    });
+    if(shapeChoice3) {
+        $('#select-shape-3').val(shapeChoice3);
+    }
+
+    // Load Slider values from the textarea
+    var shapeRotate1 = svgCode.match(/<r1>(\d*?)<\/r1>/g).map(function(val) {
+        return val.replace(/<\/?r1>/g,'');
+    });
+    if(shapeRotate1){
+        $('#rotate-slider-1').val(shapeRotate1);
+    }
+}
+
+
 // Loaded when body of HTML is loaded.
 $(document).ready(function () {
     // Check for and set the svg.js canvas
@@ -201,6 +251,8 @@ $(document).ready(function () {
 
     renderCanvas();
     downloadSVG();
+    loadClick();
+
     // When interface controls are changed, then refresh and draw SVG
     $('.update-shapes').on('change', function() {
         renderCanvas();
