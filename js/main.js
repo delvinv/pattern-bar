@@ -141,7 +141,7 @@ function renderCanvas(){
     var svgCode = $('svg').html();                                                                      // Contents of the SVG pattern we created in function so far.
     var svgText3 = '</svg>';                                                                            // Closing tag of SVG syntax.
 
-    svgText4 = "<!--" + " <s1>"+shapeChoice1+"</s1>" + " <s2>"+shapeChoice2+"</s2>" + " <s3>"+shapeChoice3+"</s3>" + " -->";
+    var svgText4 = "<!--" + " <s1>"+shapeChoice1+"</s1>" + " <s2>"+shapeChoice2+"</s2>" + " <s3>"+shapeChoice3+"</s3>" + " -->";
     svgText4 = svgText4 + "<!--" + " <r1>"+shapeRotate1+"</r1>" + " <r2>"+shapeRotate2+"</r2>" + " <r3>"+shapeRotate3+"</r3>" + " -->";
     svgText4 = svgText4 + "<!--" + " <xR>"+xRepeat+"</xR>" + " <yR>"+yRepeat+"</yR>" + " -->";
 
@@ -187,14 +187,6 @@ function downloadSVG(){
     $('#aDownloadSvg').prop('download','pattern-bar.svg');
     $('#aDownloadSvg').prop('href',window.URL.createObjectURL(svgFile));
     $('#aDownloadSvg').prop('textContent','Download SVG');
-}
-
-function loadClick(){
-    $('#aLoadSvg').click(function(e) {
-        e.preventDefault();
-        loadSVG();
-        renderCanvas();
-    })
 }
 
 // .SVG file contents are pasted in the text box and read in pattern parameters from it
@@ -265,6 +257,13 @@ function loadSVG(){
     }
 }
 
+function loadClick(){
+    $('#aLoadSvg').click(function(e) {
+        e.preventDefault();
+        loadSVG();
+        renderCanvas();
+    });
+}
 
 // Loaded when body of HTML is loaded.
 $(document).ready(function () {
