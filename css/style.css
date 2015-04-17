@@ -38,7 +38,7 @@ div .rightbanner {
 }
 
 div.banner {
-	font-size: 500%;
+	font-size: 400%;
 	color: #0F0;
 	padding-left: 50px;
 }
@@ -124,7 +124,7 @@ nav > ul > li > a:hover {
 
 	.subsection-title {
 		font-family: "Play", "Helvetica", "Verdana";
-		font-size: 125%;
+		font-size: 100%;
 		color: #cc66ff;
 	}
     .subsection-helper-text {
@@ -137,24 +137,26 @@ nav > ul > li > a:hover {
 
 	.slider-container, .div-tesselation-input, .shape-selection-and-text {
 		margin: 0px;
-		padding: 5px;
+		padding: 0px 5px 2px 5px;
 		clear: both;
 		overflow: hidden;
 	}
 
 	.slider-text {
 		float: left;
+        font-size: 80%;
+        width: 17%
 	}
 
 	.slider-controls {
-		margin: 4px 10px 0 30px;
+		margin: 1px 13px 0 13px;
 		float: left;
-		width: 50%;
+		width: 64%;
 	}
 
 	.slider-values {
 		float: left;
-		width: 10%;
+		width: 3%;
 		color: #00ff99;
 	}
 
@@ -164,7 +166,7 @@ nav > ul > li > a:hover {
 	/* Usage: <a href="#" class="green-button"><i class="fa fa-pencil"></i></a>*/
 	.green-button, #files {
 		/* Button container */
-		margin: 10px 5px 10px 0px;
+		margin: 4px 5px 4px 0px;
 		padding: 5px;
 		display: inline-block;
 		height: 20px;
@@ -231,7 +233,7 @@ nav > ul > li > a:hover {
 
 .section-header { /* Titles of each section */
 	font-family: 'Montserrat', 'Eurostile', sans-serif;
-	font-size: 150%;
+	font-size: 120%;
 	color: #ccff99;
     margin-bottom: 2px;
 }
