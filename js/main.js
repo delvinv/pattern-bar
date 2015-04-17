@@ -230,7 +230,22 @@ function loadSVG(){
         return val.replace(/<\/?r1>/g,'');
     });
     if(shapeRotate1){
-        $('#rotate-slider-1').val(shapeRotate1);
+        $("#rotate-slider-1").slider('option','value',shapeRotate1);
+        $( "#rotate-a" ).text( shapeRotate1 );
+    }
+    var shapeRotate2 = svgCode.match(/<r2>(\d*?)<\/r2>/g).map(function(val) {
+        return val.replace(/<\/?r2>/g,'');
+    });
+    if(shapeRotate2){
+        $("#rotate-slider-2").slider('option','value',shapeRotate2);
+        $( "#rotate-b" ).text( shapeRotate2 );
+    }
+    var shapeRotate3 = svgCode.match(/<r3>(\d*?)<\/r3>/g).map(function(val) {
+        return val.replace(/<\/?r3>/g,'');
+    });
+    if(shapeRotate3){
+        $("#rotate-slider-3").slider('option','value',shapeRotate3);
+        $( "#rotate-c" ).text( shapeRotate3 );
     }
 }
 
