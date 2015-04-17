@@ -247,6 +247,20 @@ function loadSVG(){
         $("#rotate-slider-3").slider('option','value',shapeRotate3);
         $( "#rotate-c" ).text( shapeRotate3 );
     }
+
+    // Load Tesselation properties from the text area
+    var xr = svgCode.match(/<xR>(\d*?)<\/xR>/g).map(function(val) {
+        return val.replace(/<\/?xR>/g,'');
+    });
+    if(xr) {
+        $('#x-repeat').val(xr);
+    }
+    var yr = svgCode.match(/<yR>(\d*?)<\/yR>/g).map(function(val) {
+        return val.replace(/<\/?yR>/g,'');
+    });
+    if(yr) {
+        $('#y-repeat').val(yr);
+    }
 }
 
 
