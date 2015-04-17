@@ -92,7 +92,7 @@ nav > ul > li > a:hover {
 
 /* Content sections breakdown */
 .content {
-    padding-top: 50px;
+    padding-top: 10px;
 	margin-left: 30px;
     overflow:auto;
 }
@@ -115,11 +115,10 @@ nav > ul > li > a:hover {
 
 .controller { /* the controls of the pattern editor are here. */
 	clear: both;
-	overflow: auto;
+/*	overflow: auto;*/
 	background-color: #7f007f;
 }
 	.top-controls, .middle-controls, .bottom-controls {
-		margin-top: 0px;
 		padding-top:5px;
 	}
 
@@ -137,7 +136,7 @@ nav > ul > li > a:hover {
     }
 
 	.slider-container, .div-tesselation-input, .shape-selection-and-text {
-		margin: 5px;
+		margin: 0px;
 		padding: 5px;
 		clear: both;
 		overflow: hidden;
@@ -159,6 +158,9 @@ nav > ul > li > a:hover {
 		color: #00ff99;
 	}
 
+.div-tesselation-input{
+    display: inline-block;
+}
 	/* Usage: <a href="#" class="green-button"><i class="fa fa-pencil"></i></a>*/
 	.green-button, #files {
 		/* Button container */
@@ -182,6 +184,10 @@ nav > ul > li > a:hover {
 
 	a.green-button {
 		text-decoration: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
 	}
 
 	a.green-button:hover {
@@ -256,7 +262,8 @@ footer {
 	/* Material design*/
 	background-color: #666666;
 	box-shadow: 0 0 7px #aaa;
-	border:2px solid #f00;
+	border:0px solid #f00;
 	padding-left: 10px;
 	padding-right: 5px;
+    padding-bottom: 1px;
 }
