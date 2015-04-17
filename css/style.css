@@ -189,7 +189,7 @@ nav > ul > li > a:hover {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 40%;
+        width: 50%;
 	}
 
 	a.green-button:hover {
@@ -226,6 +226,11 @@ nav > ul > li > a:hover {
 	color: #00cc66;
 }
 
+#exportcode {
+    color: brown;
+    background-color:bisque;
+}
+
 /* Right content area*/
 .final-pattern {
 	margin-top: 0px;
@@ -238,6 +243,15 @@ nav > ul > li > a:hover {
     margin-bottom: 2px;
 }
 
+.helper {           /* The question mark to click on for more info*/
+    font-size: 150%;
+    color: crimson;
+    float: right;
+}
+
+.dialog-boxes, .dialog-boxes > p {
+    font-family: 'Play', 'Verdana';
+}
 
 #raphaelviz {
     border: 1px solid;   

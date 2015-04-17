@@ -37,8 +37,10 @@
 				<!-- Left content -->
 				<section id="leftcontent">
 					<section class="controller">
-						<p class="section-header"><i class="fa fa-wrench"></i> Controls</p>
-<!--						<p class="helptext">Adjust the pattern using the controls below and click refresh to see changes.</p>-->
+						<p class="section-header"><i class="fa fa-wrench"></i> Controls <i id="controls-help" class="helper fa fa-question"></i> </p>
+                        <div id="controls-dialog" class="dialog-boxes" title="How to use controls">
+                            <p>Choose the 3 shapes you want to use in your pattern and then select individual rotation values. Finally, select how often the shape combination should be rotated horizontally and vertically.</p>
+                        </div>
 						<section class="top-controls">
 							<div class="subsection-title">Choose Shapes</div>
 							<div class="subsection-helper-text">Choose 3 objects to appear in the final pattern.</div>
@@ -165,22 +167,42 @@
 						<p></p>
 					</section>
 					<section class="importer">
-						<p class="section-header"><i class="fa fa-upload"></i> Import</p>
+						<p class="section-header"><i class="fa fa-upload"></i> Import <i id="import-help" class="helper fa fa-question"></i> </p>
+                        <div id="import-dialog" class="dialog-boxes" title="Importing SVG code">
+                            <p>Patterns created using PatternBär have custom tags added that can be typed/pasted here to load custom SVGs. If patternBär SVG is downloaded, it's contents can also be copied here. <br/>Supported tags are:
+                                <br/> &lt;s1&gt;shape1_index&lt;/s1&gt;
+                                <br/> &lt;s2&gt;shape2_index&lt;/s2&gt;
+                                <br/> &lt;s3&gt;shape3_index&lt;/s3&gt;
+                                <br/>
+                                <br/> &lt;r1&gt;rotate_shape1&lt;/r1&gt;
+                                <br/> &lt;r2&gt;rotate_shape2&lt;/r2&gt;
+                                <br/> &lt;r3&gt;rotate_shape3&lt;/r3&gt;
+                                <br/>
+                                <br/> &lt;xR&gt;repetitions_on_x_axis&lt;/xR&gt;
+                                <br/> &lt;yR&gt;repetitions_on_y_axis&lt;/yR&gt;
+                            </p>
+                        </div>
 						<div class="subsection-helper-text">Paste your SVG code here and press 'Use SVG' to load it.</div>
-						<textarea id="importcode" rows="3" cols="40" ></textarea>
-                        <a href="#" id="aLoadSvg" class="green-button tooltip" data-tip="Press this after pasting SVG code into the text-box on the left." ><i class="fa fa-circle"></i> Load SVG</a>
+						<textarea id="importcode" class="tooltip" data-tip="YESSSSSSSSSS" rows="3" cols="40" ></textarea>
+                        <a href="#" id="aLoadSvg" class="green-button tooltip" data-tip="Press this after pasting SVG code into the text-box on the left." ><i class="fa fa-circle"></i> Load SVG code</a>
 					</section>
                     <section class="exporter">
-						<p class="section-header"><i class="fa fa-download"></i> Export</p>
+						<p class="section-header"><i class="fa fa-download"></i> Export <i id="export-help" class="helper fa fa-question"></i> </p>
+                        <div id="export-dialog" class="dialog-boxes" title="Exporting Pattern as a SVG file">
+                            <p> You can either click and copy the contents of the textbox, or click the button to download a *.svg file, which can be opened in SVG viewers like Preview (on Mac) or Adobe Illustrator. At the end of the pattern creation SVG code, comments have been added which contain custom PatternBär code. This code can be copied on its own or with the entirety of the textarea contents for custom pattern creation in the <strong>Import</strong> section</p>
+                        </div>
 						<div class="subsection-helper-text">Controls to export the pattern goes here.</div>
 						<textarea id="exportcode" rows="5" cols="40" ></textarea>
-                        <a href="#" id="aDownloadSvg" class="green-button"><i class="fa fa-football"></i> Download SVG</a>
+                        <a href="#" id="aDownloadSvg" class="green-button"><i class="fa fa-football"></i> Download as SVG</a>
 					</section>
 				</section>
 				<!-- Right content -->
 				<section id="rightcontent">
 					<section class="final-pattern" id="final-pattern">
-						<p class="section-header"><i class="fa fa-square"></i> Pattern</p>
+						<p class="section-header"><i class="fa fa-square"></i> Pattern <i id="pattern-help" class="helper fa fa-question"></i> </p>
+                        <div id="pattern-dialog" class="dialog-boxes" title="Finished Patttern">
+                            <p>The final patern output is shown here. Export the pattern's code using controls on the left.</p>
+                        </div>
 						<section id="raphaelviz">
 							<!-- Raphael generates the viz here. -->
 						</section>
@@ -191,7 +213,10 @@
 					<section>
 						<form class="shapes-form">
 							<fieldset>
-								<legend>Shape Legend</legend>
+								<legend>Shape Legend</legend> <i id="legend-help" class="helper fa fa-question"></i>
+                                <div id="legend-dialog" class="dialog-boxes" title="Shapes available for drawing">
+                                    <p>Legend of available shapes available in PatternBär are shown here.</p>
+                                </div>
                                 <img height="300" width="400" src="img/shapes-legend-3.png">
 							</fieldset>
 						</form>

@@ -257,12 +257,40 @@ function loadSVG(){
     }
 }
 
+// Function that loads the content of the Import textarea and calls the rendering functions.
 function loadClick(){
     $('#aLoadSvg').click(function(e) {
         e.preventDefault();
         loadSVG();
         renderCanvas();
     });
+}
+
+function dialogCreator(name, opener){
+    $( name ).dialog({
+        autoOpen: false,
+        show: {
+            effect: "blind",
+            duration: 1000
+        },
+        hide: {
+            effect: "explode",
+            duration: 1000
+        }
+    });
+
+    $( opener ).click(function() {
+        $( name ).dialog("open");
+    });
+}
+
+// Load all dialog boxes so when question mark is clicked, a dialog box per ? is generated.
+function helperDialogs(){
+    dialogCreator('#controls-dialog', '#controls-help');
+    dialogCreator('#import-dialog'  , '#import-help');
+    dialogCreator('#export-dialog'  , '#export-help');
+    dialogCreator('#pattern-dialog' , '#pattern-help');
+    dialogCreator('#legend-dialog'  , '#legend-help');
 }
 
 // Loaded when body of HTML is loaded.
@@ -290,4 +318,7 @@ $(document).ready(function () {
 
     // Loading up listener that ensures clicking on text area selects its contents.
 	selectTextarea();
+
+    // Loading the helper dialog boxes
+    helperDialogs();
 });
