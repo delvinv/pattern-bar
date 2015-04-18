@@ -270,12 +270,12 @@ function dialogCreator(name, opener){
     $( name ).dialog({
         autoOpen: false,
         show: {
-            effect: "blind",
-            duration: 1000
+            effect: "fade",
+            duration: 500
         },
         hide: {
-            effect: "explode",
-            duration: 1000
+            effect: "fade",
+            duration: 500
         }
     });
 

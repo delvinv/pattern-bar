@@ -125,7 +125,7 @@ nav > ul > li > a:hover {
 	.subsection-title {
 		font-family: "Play", "Helvetica", "Verdana";
 		font-size: 100%;
-		color: #cc66ff;
+/*		color: ;*/
 	}
     .subsection-helper-text {
         padding: 1px 0 1px 0;
@@ -157,7 +157,7 @@ nav > ul > li > a:hover {
 	.slider-values {
 		float: left;
 		width: 3%;
-		color: #00ff99;
+		color: #0F0;
 	}
 
 .div-tesselation-input{
@@ -174,7 +174,7 @@ nav > ul > li > a:hover {
 		background-color: #333333;
 		border: 2px solid #000000;
 		/* Text style*/
-		color: #33ff00;
+		color: #0F0;
 		text-align: center;
 		/* Fancy effects */
 		background: linear-gradient(top, #34696f, #2f5f63);
@@ -238,14 +238,15 @@ nav > ul > li > a:hover {
 .section-header { /* Titles of each section */
 	font-family: 'Montserrat', 'Eurostile', sans-serif;
 	font-size: 120%;
-	color: #ccff99;
+	color: #0F0;
     margin-bottom: 2px;
 }
 
 .helper {           /* The question mark to click on for more info*/
     font-size: 150%;
-    color: crimson;
+    color: #0F0;
     float: right;
+    cursor: pointer;
 }
 
 .dialog-boxes, .dialog-boxes > p {
