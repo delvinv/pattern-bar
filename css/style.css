@@ -180,7 +180,6 @@ nav > ul > li > a:hover {
 		background: linear-gradient(top, #34696f, #2f5f63);
 		background: -webkit-linear-gradient(top, #34696f, #2f5f63);
 		border-radius: 1px;
-		box-shadow: 0 2px 0 #ccffcc;
 		text-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 	}
 
@@ -278,4 +277,5 @@ footer {
 	padding-left: 10px;
 	padding-right: 5px;
     padding-bottom: 1px;
+    overflow: hidden;
 }
