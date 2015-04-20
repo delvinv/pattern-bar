@@ -186,7 +186,7 @@ function downloadSVG(){
 
     $('#aDownloadSvg').prop('download','pattern-bar.svg');
     $('#aDownloadSvg').prop('href',window.URL.createObjectURL(svgFile));
-    $('#aDownloadSvg').prop('textContent','Download SVG');
+    // $('#aDownloadSvg').prop('textContent','<i class="fa fa-file-code-o"></i> Download as SVG');
 }
 
 // .SVG file contents are pasted in the text box and read in pattern parameters from it
