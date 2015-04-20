@@ -91,18 +91,6 @@ function drawShape(shapeNumber, positionNumber, rotationDegrees){
                                      [0,0.6*maxSize], [0,0.4*maxSize], [0.4*maxSize,0.4*maxSize]])
                 .fill('#fff').stroke({ width: 1 })
                 .move(padding,padding).rotate(rotationDegrees);
-        case 13: // Cross
-            return draw.circle(maxSize);
-
-        case 14: // Arrows
-            return draw.circle(maxSize);
-
-        case 15: // Flag
-            return draw.circle(maxSize);
-
-        case 16: // Heart
-            return draw.circle(maxSize);
-
     }
 }
 
