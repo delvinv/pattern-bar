@@ -61,7 +61,19 @@ function drawShape(shapeNumber, positionNumber, rotationDegrees){
                 .fill('#fff').stroke({ width: 1 })
                 .move(padding,padding).rotate(rotationDegrees);
         case 8: // Diamonds
-            return draw.circle(maxSize);
+            return draw.polygon([[0,0.33*maxSize], [0.5*maxSize, 0],
+                               [maxSize, 0.33*maxSize],
+                               [0.5*maxSize, maxSize],
+                               [0,0.33*maxSize],
+                               [maxSize,0.33*maxSize],
+                            // We need to draw the lines inside the polygon.
+                               [0.75*maxSize, 0.33*maxSize],
+                               [0.5*maxSize, maxSize],
+                               [0.5*maxSize, 0.33*maxSize],
+                               [0.5*maxSize, maxSize],
+                               [0.25*maxSize, 0.33*maxSize]])
+            .fill('#fff').stroke({ width: 1 })
+            .move(padding,padding).rotate(rotationDegrees);
         case 9: // Flower
             return draw.circle(maxSize);
         case 10: // Starfish
