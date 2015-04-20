@@ -51,6 +51,8 @@ nav {
 	color: #888;
 	display: block;
 	overflow: hidden;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 nav ul {
@@ -62,7 +64,7 @@ nav ul {
 }
 
 nav > ul > li {
-	border-right: 1px solid #ddd;
+	/*border-right: 1px solid #ddd;*/
 	width: auto;
 	display: block;
 	float: left;
@@ -74,8 +76,8 @@ nav > ul > li:last-child {
 }
 
 nav > ul > li > a {
-	background-color: #eee;
-	color: #000;
+	background-color: #3d3b3f;
+	color: #0f0;
 	display: block;
 	padding: .75em 1.5em;
 	transition: all .25s ease-in-out;
@@ -268,6 +270,11 @@ nav > ul > li > a:hover {
 footer {
 	text-align: center;
     clear: both;
+    padding-top: 5px;
+}
+
+.footer-text {
+	margin: 0px;
 }
 
 .controller, .exporter, .importer, .final-pattern {
