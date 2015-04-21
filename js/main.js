@@ -266,6 +266,8 @@ function loadClick(){
     });
 }
 
+// Create dialog boxes that are displayed when the 'Question mark', help symbol is clicked.
+// Created using jQuery Dialog Boxes.
 function dialogCreator(name, opener){
     $( name ).dialog({
         autoOpen: false,

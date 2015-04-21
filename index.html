@@ -23,14 +23,14 @@
 				<div class="banner">
 					<div class=" bannerdiv leftbanner">Pattern</div>
 					<div class=" bannerdiv rightbanner">Bär</div>
-					<div class=" bannerdiv bannericon"><i class="fa fa-yelp"></i></div>
+					<div class=" bannerdiv bannericon"><i class="fa fa-star-half-o"></i></div>
 				</div>
 			</header>
 			<section class="content">
 				<!-- Left content -->
 				<section id="leftcontent">
-					<section class="controller">
-						<p class="section-header"><i class="fa fa-wrench"></i> Controls <i id="controls-help" class="helper fa fa-question"></i> </p>
+					<section class="content-box controller">
+						<p class="section-header"><i class="fa fa-wrench"></i> Controls <i id="controls-help" class="helper fa fa-info-circle"></i> </p>
                         <div id="controls-dialog" class="dialog-boxes" title="How to use controls">
                             <p>Choose the 3 shapes you want to use in your pattern and then select individual rotation values. Finally, select how often the shape combination should be rotated horizontally and vertically.</p>
                         </div>
@@ -147,8 +147,8 @@
 						</section>
 						<p></p>
 					</section>
-					<section class="importer">
-						<p class="section-header"><i class="fa fa-upload"></i> Import <i id="import-help" class="helper fa fa-question"></i> </p>
+					<section class="content-box importer">
+						<p class="section-header"><i class="fa fa-upload"></i> Import <i id="import-help" class="helper fa fa-info-circle"></i> </p>
                         <div id="import-dialog" class="dialog-boxes" title="Importing SVG code">
                             <p>Patterns created using PatternBär have custom tags added that can be typed/pasted here to load custom SVGs. If patternBär SVG is downloaded, it's contents can also be copied here. <br/>Supported tags are:
                                 <br/> &lt;s1&gt;shape1_index&lt;/s1&gt;
@@ -167,8 +167,8 @@
 						<textarea id="importcode" class="tooltip" data-tip="YESSSSSSSSSS" rows="3" cols="40" ></textarea>
                         <a href="#" id="aLoadSvg" class="green-button tooltip" data-tip="Press this after pasting SVG code into the text-box on the left." ><i class="fa fa-file-code-o"></i> Load SVG code</a>
 					</section>
-                    <section class="exporter">
-						<p class="section-header"><i class="fa fa-download"></i> Export <i id="export-help" class="helper fa fa-question"></i> </p>
+                    <section class="content-box exporter">
+						<p class="section-header"><i class="fa fa-download"></i> Export <i id="export-help" class="helper fa fa-info-circle"></i> </p>
                         <div id="export-dialog" class="dialog-boxes" title="Exporting Pattern as a SVG file">
                             <p> You can either click and copy the contents of the textbox, or click the button to download a *.svg file, which can be opened in SVG viewers like Preview (on Mac) or Adobe Illustrator. At the end of the pattern creation SVG code, comments have been added which contain custom PatternBär code. This code can be copied on its own or with the entirety of the textarea contents for custom pattern creation in the <strong>Import</strong> section</p>
                         </div>
@@ -179,8 +179,8 @@
 				</section>
 				<!-- Right content -->
 				<section id="rightcontent">
-					<section class="final-pattern" id="final-pattern">
-						<p class="section-header"><i class="fa fa-square"></i> Pattern <i id="pattern-help" class="helper fa fa-question"></i> </p>
+					<section class="content-box final-pattern" id="final-pattern">
+						<p class="section-header"><i class="fa fa-square"></i> Pattern <i id="pattern-help" class="helper fa fa-info-circle"></i> </p>
                         <div id="pattern-dialog" class="dialog-boxes" title="Finished Patttern">
                             <p>The final patern output is shown here. Export the pattern's code using controls on the left.</p>
                         </div>
@@ -192,15 +192,24 @@
 
 
 					<section>
-						<form class="shapes-form">
-							<fieldset>
-								<legend>Shape Legend</legend> <i id="legend-help" class="helper fa fa-question"></i>
-                                <div id="legend-dialog" class="dialog-boxes" title="Shapes available for drawing">
+						<section class="content-box right-2">
+							<p class="section-header"><i class="fa fa-user"></i> About </p>
+							<nav>
+								<ul>
+									<li><a href="http://www.delv.in"><i class="fa fa-home"></i> Delvin Varghese</a></li>
+			                        <li><a href="https://github.com/delvinv"><i class="fa fa-github"></i> Github</a></li>
+									<li><a href="http://uk.linkedin.com/in/delvinv"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
+								</ul>
+							</nav>
+						</section>
+
+						<section class="content-box right-1">
+							<p class="section-header"><i class="fa fa-list-alt"></i> Legend <i id="legend-help" class="helper fa fa-info-circle"></i> </p>
+							<div id="legend-dialog" class="dialog-boxes" title="Shapes available for drawing">
                                     <p>Legend of available shapes available in PatternBär are shown here.</p>
-                                </div>
-                                <img class="legend-image" width="40%" height="40%" src="img/shapes-legend-4.png">
-							</fieldset>
-						</form>
+                            </div>
+							<img class="legend-image" width="90%" src="img/shapes-legend-4.png">
+						</section>
 					</section>
 				</section>
 				<!-- Right sidebar -->
@@ -210,14 +219,14 @@
 			</section>
 			<!-- Footer content goes in here -->
 			<footer>
-				<nav>
+				<!-- <nav>
 					<ul>
 						<li><a href="http://www.delv.in"><i class="fa fa-home"></i> Delvin Varghese</a></li>
                         <li><a href="https://github.com/delvinv"><i class="fa fa-github"></i> Github</a></li>
 						<li><a href="http://uk.linkedin.com/in/delvinv"><i class="fa fa-linkedin"></i> LinkedIn</a></li>
 					</ul>
-				</nav>
-				<p class="footer-text">&copy; 2015 Delvin Varghese. All rights reserved.</p>
+				</nav> -->
+				<!-- <p class="footer-text">&copy; 2015 Delvin Varghese. All rights reserved.</p> -->
 			</footer>
 		</div>
 	</body>
