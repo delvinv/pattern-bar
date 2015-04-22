@@ -64,12 +64,9 @@ div.banner {
 	overflow: hidden;
 	padding-left: 10px;
 	margin-left: 10px;
-	/*background-color: #996633;*/
 }
 
 .controller { /* the controls of the pattern editor are here. */
-/*	clear: both;*/
-/*	overflow: auto;*/
 	background-color: #7f007f;
 }
 	.top-controls, .middle-controls, .bottom-controls {
