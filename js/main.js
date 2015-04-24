@@ -74,17 +74,13 @@ function drawShape(shapeNumber, positionNumber, rotationDegrees){
                                [0.25*maxSize, 0.33*maxSize]])
             .fill('#fff').stroke({ width: 1 })
             .move(padding,padding).rotate(rotationDegrees);
-        case 9: // Flower
-            return draw.circle(maxSize);
-        case 10: // Starfish
-            return draw.circle(maxSize);
-        case 11: // Star
+        case 9: // Star
             return draw.defs().polygon([[0,0], [0.5*maxSize,0.25*maxSize], 
                                      [maxSize,0], [0.75*maxSize,0.5*maxSize], 
                                      [maxSize,maxSize], [0.5*maxSize,0.75*maxSize], 
                                      [0,maxSize], [0.25*maxSize,0.5*maxSize]])
             .fill('#fff').stroke({ width: 1 }).move(padding,padding).rotate(rotationDegrees);
-        case 12: // Plus shape
+        case 10: // Plus shape
             return draw.polygon([[0.4*maxSize,0], [0.6*maxSize,0], [0.6*maxSize,0.4*maxSize], 
                                      [maxSize,0.4*maxSize], [maxSize,0.6*maxSize], [0.6*maxSize,0.6*maxSize], 
                                      [0.6*maxSize,maxSize], [0.4*maxSize,maxSize], [0.4*maxSize,0.6*maxSize], 

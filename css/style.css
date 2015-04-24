@@ -111,6 +111,13 @@ div.banner {
 		color: #0F0;
 	}
 
+	.ui-slider .ui-slider-handle {
+		width: 10px;
+		height: 15px;
+		margin-top: 3px;
+		margin-left: 0px;
+	}
+
 .div-tesselation-input{
     display: inline-block;
 }
